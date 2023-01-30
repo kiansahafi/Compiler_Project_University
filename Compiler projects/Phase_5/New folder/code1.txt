@@ -1,0 +1,7 @@
+int x1 = 15;
+int x2 = 51;
+if(x1 < x2) {
+int temp = x1;
+x1 = x2;
+x2 = temp;
+}
