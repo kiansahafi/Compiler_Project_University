@@ -1,0 +1,6 @@
+int k;
+int number;
+k= 0 ;
+while(k<90){
+number = number +3;
+}
