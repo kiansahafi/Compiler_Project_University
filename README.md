@@ -1,61 +1,44 @@
-# Compiler_Project_University
+# Mini_Java Compiler Project 👨‍💻
 
-Project for Compiler class in University of zanjan
-Professor: Dr.Leila Safari
 
-Description of the Project:
+University of Zanjan
 
-First Phase:
-Lexical analysis of language manual
+Professor: Dr. Leila Safari
 
-Second Phase:
-Lexical analysis using the Lexer Tool
 
-Third Phase:
-syntactical analysis using Yacc
+## Project Description 📝
+This project, developed as part of the Compiler class at the University of Zanjan, encompasses various phases of compiler construction, each building upon the previous one. The goal is to create a compiler for a language known as Mini_Java, which is a subset of Java with specific syntactic restrictions. Here's an overview of the project phases:
 
-Fourth Phase:
-semantic analysis
+## Project Phases 🚀:
+1. **Lexical Analysis of Language Manual** 📖: In this phase, we perform lexical analysis on the Mini_Java language manual to understand its structure and rules.
 
-Fifth Phase:
-Intermediate code generation
+2. **Lexical Analysis using the Lexer Tool** 🧮: Leveraging the Lexer Tool, we conduct lexical analysis to tokenize and recognize language constructs in Mini_Java source code.
 
-1. Mini_Java
-   The Mini_Java language is a subset of Java. Every Mini_Java program is a legal Java program with Java semantics. Following is an informal summary of the syntactic restrictions of Java that define Mini_Java. Later assignments will modify restrictions.
-   A Mini_Java program is a single file without a package declaration (hence corresponds to the default package) and without imports. It consists of zero or more Java classes. The classes are simple; there are no interface classes, subclasses, or nested classes.
-   The members of a class are fields and methods. Member declarations can specify public or private access, and can specify static instantiation. Fields cannot have an initializing expression in their declaration. Methods have a parameter list and a body. There are no constructor methods.
-   The types of Mini_Java are primitive types, class types, and array types. The primitive types are limited to void, int, boolean, and the array types are limited to the integer array int [] and the class [] array where class is any class type.
-   The statements of Mini_Java are limited to the statement block, the assignment statement, method invocation, the conditional statement (if), and the repetitive statement (while).
-   A declaration of a local variable (with required initializing expression) can only appear as a statement within a statement block.
-   The return statement, if present at all, can only appear as the last statement in a method and yields a result.
-   The expressions of Mini_Java consist of operations applied to literals, variables (including indexed and qualified references), method invocation, and new arrays and objects. Expressions may be parenthesized to specify evaluation order.
-   The operators in Mini_Java are limited to
-   • relational operations: > < == <= >= !=
-   • logical operations: && || !
-   • arithmetic operations: + - \* /
-   All operators are infix binary operators (binop) with the exception of the unary prefix operators (unop) logical negation (!), and arithmetic negation (-). The latter is both a unary and binary operator.
+3. **Syntactical Analysis using Yacc** 🧾: Utilizing Yacc, we move on to syntactical analysis, parsing Mini_Java source code to create a syntax tree.
 
-1.1. Lexical rules
-The terminals in the Mini*Java grammar are the tokens produced by the scanner. The token id stands for any identifier formed from a sequence of letters, digits, and underscores, starting with a letter. Uppercase letters are distinguished from lowercase letters. The token num stands for any integer literal that is a sequence of decimal digits. Tokens binop and unop stand for the operators listed above, and the token eot stands for the end of the input text. The remaining tokens stand for themselves (i.e. for the sequence of characters that are used to spell them). Keywords of the language are shown in bold for readability only; they are written in regular lowercase text.
-Whitespace and comments may appear before or after any token. Whitespace is limited to spaces, tabs (\t), newlines (\n) and carriage returns (\r). There are two forms of comments. One starts with /* and ends with \_/, while the other begins with // and extends to the end of the line.
-The text of Mini_Java programs is written in ASCII. Any characters other than those that are part of a token, whitespace or a comment are erroneous.
-1.2. Grammar
-The Mini_Java grammar is shown on the next page. Non-terminals are displayed in the normal font and start with a capital letter, while terminals are displayed in this font. Terminals id, num, unop, and binop and represent a set of possible terminals. The remaining symbols are part of the BNF extensions for grouping, choice, and repetition. Besides these extensions the option construct is also used and is defined as follows: (α)? = (α | ε). To help distinguish the parentheses used in grouping from the left and right parenthesis used as terminals, the latter are shown in bold. The start symbol of the grammar is “Program”.
+4. **Semantic Analysis** 🧠: This phase involves semantic analysis to ensure the correctness of Mini_Java programs.
 
-Mini*Java Grammar
-Program ::= (ClassDeclaration)* eot
-ClassDeclaration::= class id < (FieldDeclaration | MethodDeclaration)_ \
-FieldDeclaration ::= Declarators id;
-MethodDeclaration ::= Declarators id (ParameterList? ) < Statement* (return Expression
-:? '
-Declarators ::= (public | private? static? Type Type::= PrimType | ClassType | ArrType PrimType ::= int boolean void
-ClassType ::= id
-ArrType ::= (int | ClassType ) [I
-ParameterList:= Type id ( Type id)*
-ArgumentList::= Expression (, Expression)_ Reference::= (this id) (.id \_
-Statement ::= { Statement\* } | Type id = Expression ; | Reference ([ Expression ])? =
-Expression ; | Reference (ArgumentList?) ; | if ( Expression) Statement (else Statement)?
-while (Expression) Statement
-Expression ::= Reference ( [ Expression ] )? | Reference (ArgumentList?) unop
-Expression Expression binop Expression| (Expression) | num true false new (id ( )
-int [ Expression ] | id [ Expression ])
+4. **Intermediate Code Generation** 🌐: The final phase focuses on generating intermediate code from the parsed Mini_Java source.
+
+## Mini_Java Language Overview 📚:
+The Mini_Java language is a subset of Java with specific syntactic restrictions, ensuring that every Mini_Java program is a legal Java program with Java semantics. Key highlights of Mini_Java include:
+
+Simple classes without nesting or inheritance.
+Basic members: fields and methods.
+Limited primitive types: void, int, boolean.
+Arrays: int[] and class[] (class is any class type).
+Supported statements: block, assignment, method invocation, if, while.
+Expressions include basic operations, logical, and relational operations.
+Our project aims to develop a compiler that can handle Mini_Java source code adhering to these specifications.
+
+## Lexical Rules 🧐
+The lexical rules define the structure of Mini_Java tokens and include identifiers (id), integer literals (num), operators (binop and unop), and more. Whitespace and comments are also recognized. The grammar and terminal symbols are outlined in the provided grammar section.
+
+## Getting Started 🏁
+This project serves as a valuable learning experience in compiler construction. You can explore each phase, understand the Mini_Java language specifications, and delve into the world of compiler development.
+
+## Usage 🧪
+Feel free to use the provided code and information for educational purposes, further compiler research, or as a reference for your own projects.
+
+## Contributing 🤝
+Contributions to this project are welcome. If you're interested in compiler development or have ideas for improvements, feel free to contribute.
